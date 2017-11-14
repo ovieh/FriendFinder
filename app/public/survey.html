@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <script src="https://use.fontawesome.com/c93833a2c0.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="css/style.css">
 
     <title>FriendFinder</title>
@@ -17,7 +17,7 @@
 <body>
     <div class="container">
         <div class="row">
-            
+
             <form class="col s12">
                 <strong>
                     <h4>About You</h4>
@@ -187,7 +187,8 @@
                     </h4>
                 </strong>
                 <h5>You think that everyone’s views should be respected regardless of whether they are supported by facts or
-                    not.</h5>
+                    not.
+                </h5>
                 <div class="row">
                     <div class="input-field col s12">
                         <select>
@@ -218,7 +219,7 @@
                         </select>
                     </div>
                 </div>
-                <button class="btn waves-effect waves-light pink lighten-4" type="submit" name="action">Submit
+                <button class="btn waves-effect waves-light pink lighten-4 modal-trigger" type="submit" name="action" href="#modal1">Submit
                     <i class="material-icons right">send</i>
                 </button>
 
@@ -226,13 +227,30 @@
         </div>
     </div>
 
+    <!-- Modal Trigger -->
+    <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script>
-        // $(document).ready(function () {
+        $(document).ready(function () {
+            // event.preventDefault();
 
-        $("select").material_select();
-        // });
+            $('.modal').modal();
+
+            $("select").material_select();
+        });
     </script>
 </body>
 
