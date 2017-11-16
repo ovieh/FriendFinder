@@ -6,8 +6,17 @@ module.exports = app => {
     });
 
     app.post("/api/friends", (req, res) => {
+
+        let user = req.body;
+        
+        user.scores = user.scores.map(score => {	
+            score = parseInt(score);
+            console.log(score);
+            return score;
+        });
+
         friends.push(req.body);
-        res.json(true);
+        // res.json(true);
     });
 
 }
