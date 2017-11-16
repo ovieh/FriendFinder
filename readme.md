@@ -5,7 +5,7 @@ TODO: Put more badges here.
 
 > Friend Finder is Full Stack Node.js app utilizing Express.js.
 
-This app demonstrates teh use of Express.js. The user is given a brief personality test and and assigned a match with similar sentiments. This data is pulled from the server using an API call and routed via Express.js.
+This app demonstrates the use of Express.js. The user is given a brief personality test and and assigned a match with similar sentiments. This data is pulled from the server using an API call and routed via Express.js.
 
 ## Table of Contents
 
