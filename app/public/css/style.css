@@ -5,6 +5,7 @@ body {
 
 #matchImg {
     max-width: 250px;
+    max-height: 250px;
 }
 
 .select-wrapper ul li>span {
