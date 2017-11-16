@@ -223,7 +223,8 @@
                 </div>
 
 
-                <button class="btn waves-effect waves-light pink lighten-4 modal-trigger" type="submit" name="action" href="#modal1" id="submit">Submit
+                <button class="btn waves-effect waves-light pink lighten-4 modal-trigger" type="submit" name="action" href="#results-modal"
+                    id="submit">Submit
                     <i class="material-icons right">send</i>
                 </button>
 
@@ -241,16 +242,19 @@
     </footer>
 
     <!-- Modal Trigger -->
-    <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
+    <!-- <a class="waves-effect waves-light btn modal-trigger" href="#results-modal">Modal</a> -->
 
     <!-- Modal Structure -->
-    <div id="modal1" class="modal">
+    <div id="results-modal" class="modal">
         <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
+            <h4>Your Best Match</h4>
+            <div id="matchName">
+                <strong></strong>
+            </div>
+            <img id="matchImg" src="" alt="Your Match">
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
         </div>
     </div>
 
@@ -311,9 +315,8 @@
 
         // Capture the form inputs 
         $("#submit").on("click", function () {
-            alert('hi');
             // Form validation
-            function validateForm() {
+            const validateForm = () => {
                 var isValid = true;
                 $('.validate').each(function () {
                     if ($(this).val() === '')
@@ -343,28 +346,29 @@
 
 
                 // Grab the URL of the website
-                var currentURL = window.location.origin;
+                const currentURL = window.location.origin;
 
                 // AJAX post the data to the friends API. 
-                $.post(currentURL + "/api/friends", userData,  data => {
+                $.post(currentURL + "/api/friends", userData, parseMatch);
 
-                    // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-                    $("#matchName").text(data.name);
-                    $('#matchImg').attr("src", data.photo);
 
-                    // Show the modal with the best match 
-                    $("#resultsModal").modal('toggle');
-
-                });
             } else {
                 alert("Please fill out all fields before submitting!");
             }
 
             return false;
         });
+
+        const parseMatch = matchData => {
+            console.log(matchData.name);
+            // add match data to the modal
+            $("#matchName").text(matchData.name);
+            $("#matchImg").attr("src", matchData.photo);
+            $('#results-modal').modal('open');
+
+        }
         $(document).ready(function () {
-            // event.preventDefault();
-            // displayQuestions();
+            //initialize modal
             $('.modal').modal();
 
             $("select").material_select();

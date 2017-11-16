@@ -7,16 +7,28 @@ module.exports = app => {
 
     app.post("/api/friends", (req, res) => {
 
-        let user = req.body;
+        let matchScore, match, user = req.body;
         
         user.scores = user.scores.map(score => {	
             score = parseInt(score);
-            console.log(score);
             return score;
         });
 
+        friends.forEach( friend => {
+            const compScore = friend.scores.reduce((accumulator, value, index) => {
+                return Math.abs(user.scores[index] - value) + accumulator;
+            }, 0);
+
+            if(!match || compScore < matchScore) {
+                match = friend;
+                matchScore = compScore;
+            }
+        });
+
         friends.push(req.body);
-        // res.json(true);
+        res.json(match);
+        // console.log(match);
+        // console.log(match.name);
     });
 
 }
