@@ -1,4 +1,4 @@
-# friendfinder
+# FriendFinder
 
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 TODO: Put more badges here.
@@ -29,7 +29,7 @@ npm install
 ## Usage
 
 ```
-```s
+```
 
 ## Maintainers
 
