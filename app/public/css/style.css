@@ -8,6 +8,10 @@ body {
     max-height: 250px;
 }
 
+.select-wrapper input.select-dropdown {
+    border-bottom: 1px solid white;
+}
+
 .select-wrapper ul li>span {
     color: hotpink;
 }
