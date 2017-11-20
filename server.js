@@ -4,6 +4,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 
+
 // Sets up the Express App
 // =============================================================
 const app = express();
@@ -17,7 +18,6 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // To serve static content
 app.use(express.static(path.join(__dirname, "app/public")));
-
 
 // Linking routes
 require("./app/routes/apiRoutes")(app);
