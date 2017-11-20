@@ -31,6 +31,11 @@ npm install
 ```
 ```
 
+## Screenshots
+![welcome](http://ovieh.com/img/week_13_1.png)
+
+![survey](http://ovieh.com/img/week_13_2.png)
+
 ## Maintainers
 
 [@Ovieh](https://github.com/Ovieh)
